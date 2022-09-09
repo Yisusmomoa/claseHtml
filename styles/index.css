@@ -1,6 +1,61 @@
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --w1: 1fr 1fr 1fr 1fr 1fr;
+}
+
+body{
+    display: grid;
+
+    /* Agregar esto porque sino
+    el ancho y alto se pondrán en auto
+    o poner el height y width por cada elemento */
+    grid-template-columns: var(--w1);
+    grid-template-rows: 10vh auto 10vh; /*header, main footer, footer*/
+   /* Tengo 5 columnas que rellenar con las areas */
+   /* y 3 filas */
+    grid-template-areas: 
+    "aside header header header header"
+    "aside main main main main"
+    "aside footer footer footer footer"
+    ;
+    /* width: 100vw; */
+    min-height: 100vh;
+}
+
+header{
+    /* grid-column: 2 / span 4; */
+    grid-area: header;
+    background-color: darkmagenta;
+}
+aside{
+    /* grid-row: 1/span 3;
+    grid-column: 1 / span 1; */
+    grid-area: aside;
+    /* min-height: 80vh; */
+    background-color: blue;
+}
+main{
+    /* grid-column: 2/span 4; */
+    /* min-height: 80vh; */
+    grid-area: main;
+    background-color: coral;
+}
+
+footer{
+    /* grid-column: 2/span 4; */
+    grid-area: footer;
+    background-color: crimson;
+}
+
+
+
+
+
+
 
